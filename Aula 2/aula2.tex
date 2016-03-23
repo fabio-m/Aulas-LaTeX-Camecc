@@ -5,12 +5,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
 \usepackage{hyperref}
-\usetheme{Warsaw}
+\usetheme{Madrid}
 
-\title{Mini-Curso de \LaTeX\ \\ Aula 02}
-\author{Fábio Meneghetti,\\
-Pedro Caetano}
-\date{}
+\title{Mini-Curso de \LaTeX\ \\ Aula 02 - Formatação}
+\author{Fábio Meneghetti \and Pedro Caetano}
+\date{29 de março de 2016}
 
 \begin{document}
 \begin{frame}
@@ -24,5 +23,46 @@ Pedro Caetano}
   \end{center}
 \end{frame}
 
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+\begin{frame}[fragile]{Página de Título}
+  \section{Página de Título}
+
+  É necessário adicionar algumas informações sobre o documento no cabeçalho.
+  \begin{itemize}
+    \item \verb+\title{Alice no País das Maravilhas}+
+    \item \verb+\author{Lewis Carroll}+
+    \item A data é adicionada automaticamente, mas para mudar, \verb+\date{4 de julho de 1865}+
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  O \LaTeX\ já monta automaticamente uma página de título usando as informações que nós demos.
+
+  Para fazer isso, coloque no começo do documento o código \verb+\maketitle+ (ver Exemplo 1).
+\end{frame}
+
+\begin{frame}[fragile]
+  Se, dentro das opções do comando \verb+\documentclass+ nós colocarmos a opção titlepage, ou seja,\\
+  \medskip
+  \verb+\documentclass[12pt,a4paper,titlepage]{article}+\\
+  \medskip
+  então o \LaTeX\ reserva uma página só para o título (tente fazer isso no Exemplo 1!).
+\end{frame}
+
+\begin{frame}[fragile]
+  \textbf{Observações:}\\
+  \begin{itemize}
+    \item O comando para ir à próxima linha no \LaTeX\ é \verb+\\+, e ele deve ser usado para pular a linha dentro dos comando title, author e date.
+    \item Para adicionar mais de um autor, eles devem ser separados por \verb+\and+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Formatação de texto}
+  \section{Formatação}
+\end{frame}
 
 \end{document}
