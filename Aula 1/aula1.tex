@@ -4,67 +4,76 @@
 \usepackage[brazilian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
-\usepackage{listings}
 \usepackage{hyperref}
 \usetheme{Warsaw}
 
-\title{Mini-Curso de \LaTeX\ \\ Aula 01}
+\title{Mini-Curso de \LaTeX\ \\ Aula 01 - Introdução}
 \author{Fábio Meneghetti,\\
 Pedro Caetano}
 \date{}
 
 \begin{document}
-  \begin{frame}
-    \titlepage
-  \end{frame}
-
-\begin{frame}{Licença}
-    Esta apresentação está licenciada com uma Licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional.
-    \begin{center}
-      \includegraphics[scale=0.3]{../license.png}
-    \end{center}
+\begin{frame}
+  \titlepage
 \end{frame}
 
-  \begin{frame}{Introdução}
-    \section{Introdução}
-    \begin{large}O que é \LaTeX?\end{large}
+\begin{frame}{Licença}
+  Esta apresentação está licenciada com uma Licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional.
+  \begin{center}
+    \includegraphics[scale=0.3]{../license.png}
+  \end{center}
+\end{frame}
 
-    \begin{itemize}
-      \item Um processador de documentos (como o Word)
-      \item Possui mais recursos para fazer fórmulas matemáticas
-      \item Você tem mais controle da diagramação, do formato e do visual
-      \item É totalmente livre
-    \end{itemize}
+\begin{frame}{Introdução}
+  \section{Introdução}
+  \begin{large}O que é \LaTeX?\end{large}
 
-  \end{frame}
+  \begin{itemize}
+    \item Um processador de documentos (como o Word)
+    \item Possui mais recursos para fazer fórmulas matemáticas
+    \item Você tem mais controle da diagramação, do formato e do visual
+    \item É totalmente livre
+  \end{itemize}
 
-  \begin{frame}
-    \frametitle{Exemplos}
-    Fábio, mostre exemplos de documentos feitos no \LaTeX, para motivar os alunos!
-  \end{frame}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exemplos}
+  Fábio, mostre exemplos de documentos feitos no \LaTeX, para motivar os alunos!
+\end{frame}
 
 \begin{frame}{Instalação}
-    \begin{itemize}
-      \item Windows: \url{http://miktex.org/}
-      \item Mac OS X: \url{https://www.tug.org/mactex/}
-      \item GNU/Linux: \url{https://www.tug.org/texlive/}
-    \end{itemize}
-    Também é bom baixar um ambiente de desenvolvimento integrado. Recomendamos o Texmaker (\url{http://www.xm1math.net/texmaker/}).
+  \begin{itemize}
+    \item Windows: \url{http://miktex.org/}
+    \item Mac OS X: \url{https://www.tug.org/mactex/}
+    \item GNU/Linux: \url{https://www.tug.org/texlive/}
+  \end{itemize}
+  Também é bom baixar um ambiente de desenvolvimento integrado. Recomendamos o Texmaker (\url{http://www.xm1math.net/texmaker/}).
+\end{frame}
+
+\begin{frame}[fragile]
+  No \LaTeX, você primeiro escreve o código do documento em um arquivo de texto (com a extensão .tex), e depois você \emph{compila} esse código, ou seja, transforma ele em um PDF.
+
+  \begin{itemize}
+    \item Pela linha de comando:\\
+    \verb+$ pdflatex arquivo.tex+
+    \item Pelo ambiente de desenvolvimento (Texmaker): basta clicar no botão de compilar e ele vai criar um PDF na mesma pasta do arquivo
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
   \section{Comandos}
-    \frametitle{Comandos}
-     Todos os comandos começam com a ``barra invertida'' \verb+\+
-\medskip
+  \frametitle{Comandos}
+  Todos os comandos começam com a ``barra invertida'' \verb+\+
+  \medskip
 
-     Tipos de comandos:
-     \begin{itemize}
-       \item Comandos diretos. \textbf{Ex:} \verb+\S+ $\rightarrow$ \S
+  Tipos de comandos:
+  \begin{itemize}
+    \item Comandos diretos. \textbf{Ex:} \verb+\S+ $\rightarrow$ \S
 
-       \item Comandos com entrada. \textbf{Ex:} \verb+\underline{Olá!}+ $\rightarrow$ \underline{Olá!}
+    \item Comandos com entrada. \textbf{Ex:} \verb+\underline{Olá!}+ $\rightarrow$ \underline{Olá!}
 
-     \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -73,15 +82,15 @@ Pedro Caetano}
 
     \item Ambientes. \textbf{Ex:}
     \begin{verbatim}
-    \begin{enumerate}
+      \begin{enumerate}
+        \item item 1
+        \item segundo item
+      \end{enumerate}
+    \end{verbatim}
+    \begin{itemize}
       \item item 1
       \item segundo item
-    \end{enumerate}
-  \end{verbatim}
-  \begin{itemize}
-    \item item 1
-    \item segundo item
-  \end{itemize}
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -100,6 +109,51 @@ Pedro Caetano}
     \item A entrada pode ser \underline{article}, beamer, book, report, letter, etc.
     \item As opções podem ser \underline{12pt}, \underline{a4paper}, notitlepage, twocolumn, landscape, etc.
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{center}\large
+    \verb+\usepackage{...}+
+  \end{center}
+  Para inserir novos recursos no \LaTeX.
+  \begin{itemize}
+    \item Matemática: \verb+amsmath, amsfonts, amssymb, amsthm+
+    \item Acentos e til: \verb+\usepackage[utf8]{inputenc}+
+    \item pt-BR: \verb+\usepackage[brazilian]{babel}+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{center}\large
+    Ambiente \verb+document+
+  \end{center}
+  É o ambiente dentro do qual todo o documento que você escreve se encontra!
+  \begin{verbatim}
+    \begin{document}
+      ...
+    \end{document}
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}
+  \begin{center}\large
+    Vamos agora fazer o Hello World! do \LaTeX!
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{verbatim}
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage[brazilian]{babel}
+
+\begin{document}
+
+  Olá \LaTeX!
+
+\end{document}
+\end{verbatim}
 \end{frame}
 
 \end{document}
