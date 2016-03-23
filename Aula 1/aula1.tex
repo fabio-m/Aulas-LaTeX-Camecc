@@ -5,10 +5,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
 \usepackage{listings}
+\usepackage{hyperref}
 \usetheme{Warsaw}
 
 \title{Mini-Curso de \LaTeX\ \\ Aula 01}
-\author{Fábio Meneghetti\\
+\author{Fábio Meneghetti,\\
 Pedro Caetano}
 \date{}
 
@@ -17,12 +18,42 @@ Pedro Caetano}
     \titlepage
   \end{frame}
 
+\begin{frame}{Licença}
+    Esta apresentação está licenciada com uma Licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional.
+    \begin{center}
+      \includegraphics[scale=0.3]{../license.png}
+    \end{center}
+\end{frame}
+
   \begin{frame}{Introdução}
     \section{Introdução}
-    O que é \LaTeX?
+    \begin{large}O que é \LaTeX?\end{large}
+
+    \begin{itemize}
+      \item Um processador de documentos (como o Word)
+      \item Possui mais recursos para fazer fórmulas matemáticas
+      \item Você tem mais controle da diagramação, do formato e do visual
+      \item É totalmente livre
+    \end{itemize}
+
   \end{frame}
 
+  \begin{frame}
+    \frametitle{Exemplos}
+    Fábio, mostre exemplos de documentos feitos no \LaTeX, para motivar os alunos!
+  \end{frame}
+
+\begin{frame}{Instalação}
+    \begin{itemize}
+      \item Windows: \url{http://miktex.org/}
+      \item Mac OS X: \url{https://www.tug.org/mactex/}
+      \item GNU/Linux: \url{https://www.tug.org/texlive/}
+    \end{itemize}
+    Também é bom baixar um ambiente de desenvolvimento integrado. Recomendamos o Texmaker (\url{http://www.xm1math.net/texmaker/}).
+\end{frame}
+
 \begin{frame}[fragile]
+  \section{Comandos}
     \frametitle{Comandos}
      Todos os comandos começam com a ``barra invertida'' \verb+\+
 \medskip
@@ -51,6 +82,23 @@ Pedro Caetano}
     \item item 1
     \item segundo item
   \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Hello World!}
+  \section{Hello World!}
+  \large Vamos fazer nosso primeiro documento em \LaTeX!
+  Mas primeiro, precisamos aprender alguns comandos básicos.
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{center}\large
+    \verb+\documentclass[...]{...}+
+  \end{center}
+  Dá informações sobre o tipo de documento que vamos usar.
+  \begin{itemize}
+    \item A entrada pode ser \underline{article}, beamer, book, report, letter, etc.
+    \item As opções podem ser \underline{12pt}, \underline{a4paper}, notitlepage, twocolumn, landscape, etc.
   \end{itemize}
 \end{frame}
 
