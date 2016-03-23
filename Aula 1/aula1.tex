@@ -24,12 +24,34 @@ Pedro Caetano}
 
 \begin{frame}[fragile]
     \frametitle{Comandos}
-     Todos os comandos começam com a ``barra invertida'' \textbackslash
+     Todos os comandos começam com a ``barra invertida'' \verb+\+
+\medskip
+
      Tipos de comandos:
      \begin{itemize}
-       \item Comandos diretos. \textbf{Ex:} \verb+\+
-       \item Comandos com entrada.
+       \item Comandos diretos. \textbf{Ex:} \verb+\S+ $\rightarrow$ \S
+
+       \item Comandos com entrada. \textbf{Ex:} \verb+\underline{Olá!}+ $\rightarrow$ \underline{Olá!}
+
      \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{itemize}
+    \item Comandos com entrada e opões. \textbf{Ex:} \verb+\usepackage[brazilian]{babel}+
+
+    \item Ambientes. \textbf{Ex:}
+    \begin{verbatim}
+    \begin{enumerate}
+      \item item 1
+      \item segundo item
+    \end{enumerate}
+  \end{verbatim}
+  \begin{itemize}
+    \item item 1
+    \item segundo item
+  \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \end{document}
