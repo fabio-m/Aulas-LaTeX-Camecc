@@ -98,8 +98,33 @@
   Tente no Exemplo 2 também!
 \end{frame}
 
-\begin{frame}{Formatação de texto}
+\begin{frame}[fragile]{Formatação de texto}
   \section{Formatação de texto}
+
+  Margem:\\
+  \begin{verbatim}
+    \usepackage[margin=2cm]{geometry}
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Alinhamento do texto}
+  O alinhamento pode ser feito usando um ambiente, ou um comando (é recomendado que se use o ambiente).
+  \begin{center}
+    \begin{tabular}{ccc}
+    \textbf{Alinhamento} & \textbf{Ambiente} & \textbf{Comando}\\
+    À esquerda & flushleft & \verb+\raggedright+\\
+    À direita & flushright & \verb+\raggedleft+\\
+    Centralizado & center & \verb+\centering+\\
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Comandos para o texto}
+  \begin{itemize}
+    \item \textit{itálico}: \verb+\textit{texto}+
+    \item \textbf{negrito}: \verb+\textbf{texto}+
+    \item \underline{sublinhado}: \verb+\underline{texto}+
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
