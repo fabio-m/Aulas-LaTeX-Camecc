@@ -82,20 +82,44 @@
   Ver Exemplo 2.
 \end{frame}
 
+\begin{frame}{Marcações e referências cruzadas}
+  É possível adicionar a seções (e subseções) marcadores (\textit{labels}) para referenciá-las pelo número em outro momento no texto.
+  
+  Isto é uma boa prática, pois o \LaTeX\ garante que a futura adição/retirada de seções não quebre estas referências.
+
+\end{frame}
+
 \begin{frame}[fragile]
+  Para criar um marcador em uma seção, por exemplo, introduz-se o comando \verb+\label{nome_do_marcador}+ dentro da entrada do comando \verb+\section{}+.\\
+  \bigskip  
+  \textbf{Ex:} \verb+\section{\label{sec:intro}Introdução}+
+\end{frame}
+
+\begin{frame}[fragile]
+  Para referenciar um marcador no texto, usa-se o comando \verb+\ref{nome_da_marcador}+. 
+  
+  É possível também introduzir o número da página onde se encontra o marcador com o comando \verb+\pageref{nome_da_marcação}+.\\
+  \medskip
+  \textbf{Ex:} Como visto na seção \verb+\ref{sec:intro}+, página \verb+\pageref{nome_da_marcação}+, ...\\
+  \medskip
+  Experimente isto no Exemplo 2!
+\end{frame}
+
+\begin{frame}[fragile]{Seções não-numeradas}
   Para adicionar uma seção ou subseção não-numerada, adicione um asterisco no fim do comando.\\
   \medskip
   \textbf{Ex:} \verb+\section*{Introdução}+
   \medskip
 
-  Tente no Exemplo 2!
+  Tente também no Exemplo 2!
+  
 \end{frame}
 
 \begin{frame}[fragile]
   Para adicionar um sumário, utilize o comando \verb+\tableofcontents+
   \bigskip
 
-  Tente no Exemplo 2 também!
+  Tente, mais uma vez, no Exemplo 2!
 \end{frame}
 
 \begin{frame}[fragile]{Formatação de texto}
@@ -105,32 +129,8 @@
   \begin{verbatim}
     \usepackage[margin=2cm]{geometry}
   \end{verbatim}
-\end{frame}
-
-\begin{frame}[fragile]{Alinhamento do texto}
-  O alinhamento pode ser feito usando um ambiente, ou um comando (é recomendado que se use o ambiente).
-  \begin{center}
-    \begin{tabular}{ccc}
-    \textbf{Alinhamento} & \textbf{Ambiente} & \textbf{Comando}\\
-    À esquerda & flushleft & \verb+\raggedright+\\
-    À direita & flushright & \verb+\raggedleft+\\
-    Centralizado & center & \verb+\centering+\\
-    \end{tabular}
-  \end{center}
-\end{frame}
-
-\begin{frame}[fragile]{Comandos para o texto}
-  \begin{itemize}
-    \item \textit{itálico}: \verb+\textit{texto}+
-    \item \textbf{negrito}: \verb+\textbf{texto}+
-    \item \underline{sublinhado}: \verb+\underline{texto}+
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Espaçamento}
-
   
-
+  Experimente, ainda uma vez mais, no Exemplo 2. Tente também, usando o pacote geometry, configurar as margens do Exemplo 2 de forma que as margens esquerda e superior sejam 2 cm e as margens direita e inferior 3 cm.
 \end{frame}
 
 \begin{frame}
