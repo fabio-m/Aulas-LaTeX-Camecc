@@ -75,27 +75,21 @@
   \begin{itemize}
     \item Comandos diretos. \textbf{Ex:} \verb+\S+ $\rightarrow$ \S
 
-    \item Comandos com entrada. \textbf{Ex:} \verb+\underline{Olá!}+ $\rightarrow$ \underline{Olá!}
+    \item Comandos com entrada. A entrada deve ser adicionada entre chaves \verb+{}+ imediatamente após o comando \textbf{Ex:} \verb+\underline{Olá!}+ $\rightarrow$ \underline{Olá!}
 
+    \item Ambientes, que começam com \verb+\begin{nome_do_ambiente}+ e terminam com \verb+\end{nome_do_ambiente}+ \textbf{Ex:} Ambientes de tabelas, imagens, equações, etc.
   \end{itemize}
+
 \end{frame}
 
 \begin{frame}[fragile]
-  \begin{itemize}
-    \item Comandos com entrada e opões. \textbf{Ex:} \verb+\usepackage[brazilian]{babel}+
+  Alguns comandos podem receber opções extras, e isso é feito adicionando colchetes \verb+[]+ antes das chaves.
+  \medskip
 
-    \item Ambientes. \textbf{Ex:}
+  \textbf{Ex:} Para adicionar pacotes (ver slide \ref{pacotao}):
     \begin{verbatim}
-      \begin{enumerate}
-        \item item 1
-        \item segundo item
-      \end{enumerate}
+      \usepackage[brazilian]{babel}
     \end{verbatim}
-    \begin{itemize}
-      \item item 1
-      \item segundo item
-    \end{itemize}
-  \end{itemize}
 \end{frame}
 
 \begin{frame}{Hello World!}
@@ -115,7 +109,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
+\begin{frame}[fragile]\label{pacotao}
   \begin{center}\large
     \verb+\usepackage{...}+
   \end{center}
@@ -168,7 +162,7 @@
   \item o site do Comprehensive \TeX\  Archive Network (\url{https://ctan.org/}), onde você pode provavelmente pode encontrar a documentação do pacote que está utilizando e\\
   \item o wikibook do \LaTeX\ (\url{https://en.wikibooks.org/wiki/LaTeX}).
   \end{itemize}
-  
+
 \end{frame}
 
 \begin{frame}
