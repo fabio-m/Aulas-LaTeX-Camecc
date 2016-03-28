@@ -59,8 +59,89 @@
 
 \end{frame}
 
-\begin{frame}{Tabelas}
+\begin{frame}[fragile]{Tabelas}
   \section{Tabelas}
+  Para se iniciar uma tabela no \LaTeX, utiliza-se um ambiente chamado tabular. A parte do \verb+\begin+ tem duas entradas, uma é nome do ambiente (tabular) e a outra é o alinhamento de cada coluna (l, c ou r), separados por um espaço:
+  \begin{verbatim}
+  \begin{tabular}{l c c}
+
+  \end{tabular}
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  Cada linha do texto nesse ambiente será uma linha da tabela, e o fim da linha deve ser indicado com um \verb+\\+.
+
+  Os elementos na linha devem ser separados pelo símbolo \verb+&+:
+  \begin{verbatim}
+  \begin{tabular}{l c}
+    Corrente & Tensão\\
+    15 & 30\\
+    10 & 20\\
+  \end{tabular}
+  \end{verbatim}
+
+  (Ver resultado no Exemplo 1)
+\end{frame}
+
+\begin{frame}[fragile]
+  Para adicionar linhas verticais, basta utilizar o símbolo \verb+|+ entre as letras da segunda entrada do ambiente tabular.
+
+  \textbf{Ex:} \verb+\begin{tabular}{|l|c|c|}+
+
+  \medskip
+
+  Para adicionar linhas horizontais, basta adicionar \verb+\hline+ entre os valores da tabela.
+
+  \textbf{Ex:}
+  \begin{verbatim}
+  \begin{tabular}{|l|c|}
+    \hline
+    Corrente & Tensão\\
+    \hline
+    15 & 30\\
+    \hline
+  \end{tabular}
+  \end{verbatim}
+  (Tente no Exemplo 1!)
+\end{frame}
+
+\begin{frame}[fragile]
+  Para adicionar legendas, labels, e para se definir uma posição da tabela, é recomendável colocar o ambiente tabular dentro de um ambiente table:
+  \begin{verbatim}
+  \begin{table}[opções]
+    \begin{tabular}{...}
+      ...
+    \end{tabular}
+  \end{table}
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{itemize}
+    \item As opções indicam o posicionamento da tabela, e são dadas por:
+    \begin{itemize}
+      \item \textbf{h} - Onde o código se encontra
+      \item \textbf{t} - No topo da página
+      \item \textbf{b} - No fim da página
+      \item \textbf{!} - Tira algumas restrições do tipo tabela (tente usar se algo não está saíndo do jeito que você quer)
+    \end{itemize}
+    \item Ainda é possível adicionar um \verb+\caption{texto}+ para colocar uma legenda na tabela
+    \item Para fazer referência a essa tabela (como explicado na Aula 2), use \verb+\label{table:nome_do_marcador}+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \textbf{Exemplo:}
+  \begin{verbatim}
+  \begin{table}[!h]
+    \begin{tabular}{...}
+      ...
+    \end{tabular}
+    \caption{Esta á uma tabela muito elegante}
+    \label{table:elegancia}
+  \end{table}
+  \end{verbatim}
 \end{frame}
 
 \begin{frame}
