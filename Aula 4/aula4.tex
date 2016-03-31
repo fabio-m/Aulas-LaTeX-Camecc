@@ -27,6 +27,63 @@
   \tableofcontents
 \end{frame}
 
+\begin{frame}{Introdução}
+  \section{Sobre o modo matemático}
+  Para se adicionar equações e fórmulas matemáticas no latex, existe um ambiente dedicado a isso, com comandos específicos que só funcionam quando você está nesse ambiente. Além disso, todas as letras digitadas dentro desse ambiente serão colocadas em itálico, que é o padrão para variáveis matemáticas.
+  \\[1cm]
+  Mas existem várias formas de se entrar no ambiente matemático, e elas produzem resultados diferentes no documento. Vamos mostrá-las agora.
+\end{frame}
+
+\begin{frame}[fragile]{Entrando no modo matemático}
+  \section{Entrando no modo matemático}
+  \begin{enumerate}
+    \item \textbf{O modo em linha (\textit{inline}):} Serve para adicionar matemática no meio de um texto normal. Para entrar nesse modo, basta colocar o código entre cifrões \$.
+
+    \item \textbf{O modo display:} Serve para colocar uma equação matemática em linha própria, centralizada, dando certo destaque. Para entrar nesse modo, basta colocar o código entre \verb+\[+ e \verb+\]+.
+
+    \item \textbf{Equações:} O resultado da equação é igual ao do modo display, porém ela se torna numerada. Desse forma, pode-se fazer referências a equações. Para criar uma equação, basta criar um ambiente equation (com \verb+\begin{equation}+ e \verb+\end{equation}+).
+
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+  Antes de fazer um exemplo, vamos aprender alguns comandos simples para poder brincar:
+  \begin{itemize}
+    \item Para se fazer o ``elevado'', basta utilizar o chapéu \verb+^+. \textbf{Ex:} \verb+x^2+ gera $x^2$
+    \item Um valor subescrito é análogo, mas utilizando o \verb+_+. \textbf{Ex:} \verb-x_1 + x_2^3- gera $x_1 + x_2^3$
+    \item Para adicionar mais de um só dígito no subescrito ou no elevado, basta ``encapsular'' tudo com chaves. \textbf{Ex:} \verb-e^{2 \pi i}- gera $e^{2 \pi i}$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  Vamos fazer um exemplo! (Exemplo 1)
+\end{frame}
+
+\begin{frame}{Símbolos}
+  \section{Símbolos}
+
+  A quantidade de símbolos disponíveis para se utilizar no modo matemático é extremamente grande, e não vamos gastar o tempo para mostrando um por um. Mas vamos passar alguns links de páginas com tabelas e listas de símbolos, para que você possa procurar aqueles que você deseja usar. Algumas páginas que julgamos serem boas são:
+
+  \begin{itemize}
+    \item \url{http://latex.wikia.com/wiki/List_of_LaTeX_symbols}
+    \item \url{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Frações, integrais e somatórios}
+  \section{Frações, integrais e somatórios}
+  \begin{itemize}
+    \item Para adicionar frações, o comando é \verb+\frac{numerador}{denominador}+
+    \item O símbolo de integral é \verb+\int+. Ao adicionar valores no subescrito e no elevado da integral, esses valores são posicionados como os extremos de integração. \textbf{Ex:} \verb+\int_0^1 f(x) dx+ gera
+    \[
+    \int_{0}^1 f(x) dx
+    \]
+    \item \textbf{Exercício:} O símbolo de somatório é \verb+\sum+. Tente escrever no \LaTeX\ o seguinte somatório:
+    \[
+      \sum_{k=1}^n x^k
+    \]
+  \end{itemize}
+\end{frame}
 
 \begin{frame}
   \begin{center}
