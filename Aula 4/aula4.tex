@@ -85,6 +85,35 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Matrizes}
+  \section{Matrizes}
+  \begin{itemize}
+    \item As matrizes funcionam de forma muito similas às tabelas, porém no modo matemático.
+    \item Há vários tipos de ambiente:
+    \begin{itemize}
+      \item pmatrix para matrizes com parênteses
+      \item bmatrix para colchetes
+      \item Bmatrix para chaves
+      \item vmatrix para barras verticais $|$ (geralmente é o determinante)
+      \item Vmatrix para barras verticais duplas $\|$
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{itemize}
+    \item Basta então adicionar as entradas exatamente como se fosse uma tabela, ou seja, separando as entradas com \verb+&+ e quebrando a linha com \verb+\\+
+    \item \textbf{Dica:} Para matrizes muito grandes, pode ser bom usar reticências:
+    \begin{itemize}
+      \item Horizontais: \verb+\cdots+ gera $\cdots$
+      \item Verticais: \verb+\vdots+ gera $\vdots$
+      \item Diagonais: \verb+\ddots+ gera $\ddots$
+    \end{itemize}
+    \item Vamos ver o Exemplo 2!
+  \end{itemize}
+
+\end{frame}
+
 \begin{frame}[fragile]{O ambiente align}
   \section{Align}
   Às vezes você precisa escrever várias equações, uma em cima da outra, mas elas possuem cada uma um tamanho diferente, de tal forma que elas não vão ficar alinhadas. Uma solução é o ambiente matemático align, que alinha suas equações.
@@ -93,7 +122,7 @@
   Para alinhas as equações dentro de um ambiente align, basta separar o lado esquerdo e o direito com um \verb+&+, e usar um \verb+\\+ para terminar a linha.
   \\[5px]
 
-  Dá também para usar vários \verb+&+ para fazer vários alinhamentos. Vamos ver o Exemplo 2!
+  Dá também para usar vários \verb+&+ para fazer vários alinhamentos. Vamos ver o Exemplo 3!
 \end{frame}
 
 \begin{frame}
