@@ -1,0 +1,36 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+
+\title{Algumas coisas a mais}
+\author{Noam Chomsky}
+\date{}
+
+\begin{document}
+
+  \maketitle
+
+  Considere a função $f:\mathbb{R} \to \{0,1\}$ definida por:
+
+  \[
+    f(x) =
+    \begin{cases}
+      0 & \text{ se } x \in \mathbb{Q} \\
+      x & \text{ caso contrário}
+    \end{cases}
+  \]
+
+  Então
+
+  \[
+    \lim_{x \to 0} f(x) = 0.
+  \]
+
+  Porém
+
+  \[
+    \left( \frac{d}{dx} f(x) \right) \text{ não está definida em } x=0
+  \]
+
+\end{document}

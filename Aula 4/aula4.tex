@@ -116,13 +116,29 @@
 
 \begin{frame}[fragile]{O ambiente align}
   \section{Align}
-  Às vezes você precisa escrever várias equações, uma em cima da outra, mas elas possuem cada uma um tamanho diferente, de tal forma que elas não vão ficar alinhadas. Uma solução é o ambiente matemático align, que alinha suas equações.
-  \\[5px]
+  \begin{itemize}
+    \item Às vezes você precisa escrever várias equações, uma em cima da outra, mas elas possuem cada uma um tamanho diferente, de tal forma que elas não vão ficar alinhadas. Uma solução é o ambiente matemático align, que alinha suas equações.
+    \item Para alinhas as equações dentro de um ambiente align, basta separar o lado esquerdo e o direito com um \verb+&+, e usar um \verb+\\+ para terminar a linha.
+    \item Dá também para usar vários \verb+&+ para fazer vários alinhamentos. Vamos ver o Exemplo 3!
+  \end{itemize}
 
-  Para alinhas as equações dentro de um ambiente align, basta separar o lado esquerdo e o direito com um \verb+&+, e usar um \verb+\\+ para terminar a linha.
-  \\[5px]
+\end{frame}
 
-  Dá também para usar vários \verb+&+ para fazer vários alinhamentos. Vamos ver o Exemplo 3!
+\begin{frame}[fragile]{Algumas coisainhas a mais}
+  \begin{itemize}
+    \item Para adicionar uma lista de equações precididas por uma chave, para indicar ``casos'', basta usar o ambiente cases e dividir as equações usando \verb+\\+
+    \item Para adicionar um texto no meio do modo matemático, basta usar o comando \verb+\text{}+, ou se for só uma palara, \verb+\mathrm{}+
+    \item Para colocar parênteses ou colchetes em uma expressão grande, e fazer que o tamanho dos parênteses se ajustem ao tamanho da expressão, basta usar os comandos \verb+\left(+ e \verb+\right)+ (ou \verb+[+ e \verb+]+)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{itemize}
+    \item Alguns comandos como \verb+\sin+, \verb+\cos+, \verb+\lim+ estão definidos no \LaTeX, para não serem exibidos em itálico, e no caso de \verb+\lim+, para se adicionar o subescrito embaixo
+    \item Há muitos recursos no modo matemático, e tentamos falar sobre o máximo possível deles, mas não dá pra falar de tudo. Dê uma olhada em \url{en.wikibooks.org/wiki/LaTeX/Mathematics},
+    pois a página está bem completa.
+    \item Veja o Exemplo 4!
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
