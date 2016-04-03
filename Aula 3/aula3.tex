@@ -146,10 +146,6 @@
   \textbf{Dica:} Extensão do OpenOffice Calc2LaTeX
 \end{frame}
 
-\begin{frame}{Figuras}
-  \section{Figuras}
-\end{frame}
-
 \begin{frame}[fragile]{Listas}
   \section{Listas}
   \begin{itemize}
@@ -157,6 +153,89 @@
     \item Dentro do ambiente, coloque o comando \verb+\item+ no começo de cada linha que você quer que seja um item
     \item Ver Exemplo 2!
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Figuras}
+  \section{Figuras}
+  Introduzimos figuras em documentos \LaTeX\ usando o comando \verb+\includegraphics+, do pacote graphicx, cuja sintaxe é
+  \begin{verbatim}
+    \includegraphics[parametro1=valor1, ...]
+                               {arquivo_de_imagem}
+  \end{verbatim}
+  
+  A entrada do comando deve possuir o caminho do arquivo de imagem a ser inserido relativo à pasta onde o arquivo tex se encontra. São suportados os formatos jpg, png, pdf e eps.  
+
+\end{frame}
+
+\begin{frame}[fragile]
+  Há várias opções disponíveis para o comando \verb+\includegraphics+. Algumas das mais usadas se encontram na tabela abaixo.
+  \begin{center}
+    \begin{tabular}{cc}
+      \textbf{Opção} & \textbf{Efeito} \\
+      width=x & Ajusta a largura da figura para x\\
+      height=x & Ajusta a altura da figura para x\\
+      scale=x & Ajusta a escala da figura para x\\	
+      angle=x & Gira a imagem x graus no sentido
+      antihorário
+    \end{tabular}
+  \end{center}
+  
+  \textbf{Dica: } Às vezes é útil especificar a largura da imagem em função da largura do texto, que é obtida pelo comando \verb+\textwidth+. Assim, por exemplo, podemos fazer com que a largura da figura seja 80 \% da largura do texto com a opção \verb+width=0.8\textwidth+.
+\end{frame}
+
+\begin{frame}[fragile]
+
+  \textbf{Exercício: } Inclua a imagem \emph{duck.jpg} no Exemplo 2 de forma a obter um resultado semelhante ao arquivo \emph{ex2.1.pdf}\\
+  \bigskip
+  \pause
+  \textbf{Solução: }
+  \begin{verbatim}
+    \begin{center}
+      \includegraphics[width=0.65\textwidth]{duck} 
+    \end{center}
+    Felicidade e elegância. Foto de Francis C. Franklin, 
+    licenciada sobre Creative Commons Atribuição-
+    CompartilhaIgual 3.0 Não Adaptada. \\
+  \end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]{Ambiente figure}
+O ambiente figure desempenha para imagens papel semelhante ao do ambiente table para tabelas, permitindo que o \LaTeX\ ajuste a posição da imagem no texto e que possamos introduzir legendas e labels em nossas imagens.\\
+
+\textbf{Sintaxe: }
+\begin{verbatim}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{grafico}
+  \caption{Legenda do gráfico.}
+  \label{fig:grafico}
+\end{figure}
+\end{verbatim}
+
+As opções do ambiente figure funcionam exatamente como as do ambiente table.
+\end{frame}
+
+\begin{frame}[fragile]
+\textbf{Exercício: } Introduza o gráfico 
+ \emph{grafico\_patos.pdf} no Exemplo 1 usando o ambiente figure. Referencie o gráfico no texto usando labels.
+
+\pause
+
+\textbf{Solução: }
+\begin{verbatim}
+(cf. também a Figura \ref{fig:graf_pato}).
+  
+  \begin{figure}[htb]
+  \centering
+  \includegraphics[width=\textwidth]{grafico_patos.pdf}
+  \caption{Evolução recente do número de pessoas
+  patonificadas e felicidade. Dados do último
+  censo IBGE.}
+  \label{fig:graf_pato}
+  \end{figure}
+\end{verbatim}
+
 \end{frame}
 
 \begin{frame}
