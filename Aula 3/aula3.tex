@@ -23,13 +23,24 @@
   \end{center}
 \end{frame}
 
+\begin{frame}[fragile]{Resposta do Exercício}
+
+  \begin{verbatim}
+    \usepackage[top=3px,
+                left=2cm,
+                right=1em,
+                bottom=2pt]{geometry}
+  \end{verbatim}
+
+\end{frame}
+
 \begin{frame}
   \tableofcontents
 \end{frame}
 
 \begin{frame}[fragile]{Alinhamento do texto}
   \section{Formatação (continuação)}
-  O alinhamento pode ser feito usando um ambiente, ou um comando (é recomendado que se use o ambiente).
+  O alinhamento pode ser feito usando um ambiente ou um comando. O comando faz que todo o texto o texto a partir daquele ponto seja alinhado, e é recomendado que se use apenas dentro de algum outro ambiente, ou dentro de \{ e \} (como veremos em tabelas e figuras). Para um texto normal, o ambiente é mais recomendado.
   \begin{center}
     \begin{tabular}{ccc}
     \textbf{Alinhamento} & \textbf{Ambiente} & \textbf{Comando}\\
@@ -46,6 +57,9 @@
     \item \textbf{negrito}: \verb+\textbf{texto}+
     \item \underline{sublinhado}: \verb+\underline{texto}+
     \item \textsc{Letra de forma}: \verb+\textsc{texto}+
+    \\[.5cm]
+    O comando para tamanho da fonte muda o tamanho de tudo dentro do ambiente, ou dentro de \{ e \}. Portanto para deixar apenas um texto em tamanho grande, é preciso usar \verb+{\Large texto}+
+    \item Comandos em ordem crescente: tiny, scriptsize, footnotesize, small, normalsize, large, Large, LARGE, huge, Huge
   \end{itemize}
 \end{frame}
 
@@ -55,6 +69,7 @@
   \item \verb+\\+ - quebra para a próxima linha. Tem uma opção para um espaço extra com \verb+\\[2cm]+
   \item \verb+\pagebreak+ - quebra de página
   \item \verb+\bigskip+, \verb+\medskip+ e \verb+\smallskip+ pulam certos espaço
+  \item Vamos testar todas essas coisas no Exemplo 1!
 \end{itemize}
 
 \end{frame}
@@ -75,13 +90,13 @@
   Os elementos na linha devem ser separados pelo símbolo \verb+&+:
   \begin{verbatim}
   \begin{tabular}{l c}
-    Corrente & Tensão\\
+    Corrente [A] & Tensão [V]\\
     15 & 30\\
     10 & 20\\
   \end{tabular}
   \end{verbatim}
 
-  (Ver resultado no Exemplo 1)
+  (Ver resultado no Exemplo 2)
 \end{frame}
 
 \begin{frame}[fragile]
@@ -103,7 +118,7 @@
     \hline
   \end{tabular}
   \end{verbatim}
-  (Tente no Exemplo 1!)
+  (Tente no Exemplo 2!)
 \end{frame}
 
 \begin{frame}[fragile]
@@ -126,6 +141,7 @@
       \item \textbf{b} - No fim da página
       \item \textbf{!} - Tira algumas restrições do tipo tabela (tente usar se algo não está saíndo do jeito que você quer)
     \end{itemize}
+    \item É possível colocar um comando de alinhamento, como \verb+\centering+ antes de começar o ambiente tabular
     \item Ainda é possível adicionar um \verb+\caption{texto}+ para colocar uma legenda na tabela
     \item Para fazer referência a essa tabela (como explicado na Aula 2), use \verb+\label{table:nome_do_marcador}+
   \end{itemize}
@@ -135,6 +151,7 @@
   \textbf{Exemplo:}
   \begin{verbatim}
   \begin{table}[!h]
+    \centering
     \begin{tabular}{...}
       ...
     \end{tabular}
@@ -151,7 +168,7 @@
   \begin{itemize}
     \item Existem dois ambientes para listas, o itemize e o enumerate. A diferença entre os dois é que o enumerate é numerado e o itemize não.
     \item Dentro do ambiente, coloque o comando \verb+\item+ no começo de cada linha que você quer que seja um item
-    \item Ver Exemplo 2!
+    \item Ver Exemplo 3!
   \end{itemize}
 \end{frame}
 
@@ -162,8 +179,8 @@
     \includegraphics[parametro1=valor1, ...]
                                {arquivo_de_imagem}
   \end{verbatim}
-  
-  A entrada do comando deve possuir o caminho do arquivo de imagem a ser inserido relativo à pasta onde o arquivo tex se encontra. São suportados os formatos jpg, png, pdf e eps.  
+
+  A entrada do comando deve possuir o caminho do arquivo de imagem a ser inserido relativo à pasta onde o arquivo tex se encontra. São suportados os formatos jpg, png, pdf e eps.
 
 \end{frame}
 
@@ -174,26 +191,26 @@
       \textbf{Opção} & \textbf{Efeito} \\
       width=x & Ajusta a largura da figura para x\\
       height=x & Ajusta a altura da figura para x\\
-      scale=x & Ajusta a escala da figura para x\\	
+      scale=x & Ajusta a escala da figura para x\\
       angle=x & Gira a imagem x graus no sentido
       antihorário
     \end{tabular}
   \end{center}
-  
-  \textbf{Dica: } Às vezes é útil especificar a largura da imagem em função da largura do texto, que é obtida pelo comando \verb+\textwidth+. Assim, por exemplo, podemos fazer com que a largura da figura seja 80 \% da largura do texto com a opção \verb+width=0.8\textwidth+.
+
+  \textbf{Dica: } Às vezes é útil especificar a largura da imagem em função da largura do texto, que é obtida pelo comando \verb+\textwidth+. Assim, por exemplo, podemos fazer com que a largura da figura seja $80 \%$ da largura do texto com a opção \verb+width=0.8\textwidth+.
 \end{frame}
 
 \begin{frame}[fragile]
 
-  \textbf{Exercício: } Inclua a imagem \emph{duck.jpg} no Exemplo 2 de forma a obter um resultado semelhante ao arquivo \emph{ex2.1.pdf}\\
+  \textbf{Exercício: } Inclua a imagem \emph{duck.jpg} no Exemplo 3 de forma a obter um resultado semelhante ao arquivo \emph{ex3.1.pdf}\\
   \bigskip
   \pause
   \textbf{Solução: }
   \begin{verbatim}
     \begin{center}
-      \includegraphics[width=0.65\textwidth]{duck} 
+      \includegraphics[width=0.65\textwidth]{duck}
     \end{center}
-    Felicidade e elegância. Foto de Francis C. Franklin, 
+    Felicidade e elegância. Foto de Francis C. Franklin,
     licenciada sobre Creative Commons Atribuição-
     CompartilhaIgual 3.0 Não Adaptada. \\
   \end{verbatim}
@@ -217,22 +234,22 @@ As opções do ambiente figure funcionam exatamente como as do ambiente table.
 \end{frame}
 
 \begin{frame}[fragile]
-\textbf{Exercício: } Introduza o gráfico 
- \emph{grafico\_patos.pdf} no Exemplo 1 usando o ambiente figure. Referencie o gráfico no texto usando labels.
+\textbf{Exercício: } Introduza o gráfico
+ \emph{grafico\_patos.pdf} no Exemplo 2 usando o ambiente figure. Referencie o gráfico no texto usando labels.
 
 \pause
 
 \textbf{Solução: }
 \begin{verbatim}
 (cf. também a Figura \ref{fig:graf_pato}).
-  
+
   \begin{figure}[htb]
-  \centering
-  \includegraphics[width=\textwidth]{grafico_patos.pdf}
-  \caption{Evolução recente do número de pessoas
-  patonificadas e felicidade. Dados do último
-  censo IBGE.}
-  \label{fig:graf_pato}
+    \centering
+    \includegraphics[width=\textwidth]{grafico_patos.pdf}
+    \caption{Evolução recente do número de pessoas
+    patonificadas e felicidade. Dados do último
+    censo IBGE.}
+    \label{fig:graf_pato}
   \end{figure}
 \end{verbatim}
 
