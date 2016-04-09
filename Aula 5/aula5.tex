@@ -49,11 +49,72 @@
 
 \begin{frame}[fragile]{Links}
   \section{Links}
-  Para adicionar links, basta adionar o pacote \verb+hyperref+,
+  Para adicionar links (clicáveis!) no seu documento, basta adicionar o pacote \verb+hyperref+.\\
+  
+  A fim de introduzir no texto um endereço de internet que possua um link, usa-se o comando \verb+\url{http://pagina.web}+\\
+  \medskip
+  \textbf{Ex.:} 
+  \begin{verbatim}  
+  Na página \url{https://ctan.org/pkg/hyperref}
+  podes encontrar a documentação do pacote
+  hyperref.
+  \end{verbatim}
 \end{frame}
 
-\begin{frame}{Teoremas}
+\begin{frame}[fragile]
+  Já para introduzir em um trecho do texto um link a uma página específica, usa-se o comando \verb+\href{http://pagina.web}{texto}+\\
+  \medskip
+  \textbf{Ex.:}
+  \begin{verbatim}
+  \href{https://ctan.org/pkg/hyperref}{Clique aqui} 
+  para acessar a documentação do pacote 
+  hyperref.
+  \end{verbatim}
+  Outro efeito interessante do pacote \verb+hyperref+ é que referências cruzadas, itens do sumário e notas de rodapé passam a possuir links clicáveis no pdf produzido.
+\end{frame}
+
+\begin{frame}[fragile]{Teoremas}
   \section{Teoremas}
+  Quando estamos digitando matemática em \LaTeX é comum necessitarmos de ambiente numerados. \\
+  \medskip
+  O exemplo mais comum são teoremas numerados, mas a situação é a mesma com definições, lemas, corolários etc... (veja ex2.pdf).\\
+  \medskip
+  Isto é feito com o comando \verb+\newtheorem{nome_do_ambiente}{Texto}+, do pacote \verb+amsthm+. 
+\end{frame}
+
+\begin{frame}[fragile]
+  Note que o comando \verb+\newtheorem+ cria novos ambientes. Assim, se quisermos criar um ambiente \textit{teorema}, introduzimos no preâmbulo do documento o comando
+
+  \begin{verbatim} 
+\newtheorem{teorema}{Teorema }
+  \end{verbatim}
+  Sempre que quisermos criar um teorema no texto, invocamos este ambiente com a sintaxe usual
+   
+  \begin{verbatim} 
+\begin{teorema} BlaBlaBla \end{teorema}
+  \end{verbatim}
+  e a saída aparecerá como 
+  
+  \bigskip  
+  \textbf{Teorema 2} BlaBlaBla.
+
+\end{frame}
+
+\begin{frame}[fragile]
+  Há também um ambiente para adicionar demonstrações à teoremas, o ambiente \textit{proof}, usado como
+  
+  \verb+\begin{proof} Prova a cargo do leitor \end{proof}+
+  
+  \bigskip
+  
+  \textbf{Dica: } Por padrão a numeração de ambientes tipo teorema é independente de seção, capítulo etc. Se quiser numerar teoremas no estilo (número do teorema).(número da seção) basta adicionar a opção \verb+section+ ao comando \verb+\newtheorem+
+
+  \begin{verbatim} 
+\newtheorem{teorema}{Teorema }[section] 
+  \end{verbatim}
+  
+  Divirta-se com o exemplo ex2.tex!
+
 \end{frame}
 
 \begin{frame}
