@@ -37,8 +37,69 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Bibliografia}
+\begin{frame}[fragile]{Bibliografia}
   \section{Bibliografia}
+  Há várias formas de adicionar bibliografia no \LaTeX. A mais utilizada é com o programa BibTeX. Ele funciona da seguinte forma:
+  \begin{itemize}
+    \item Você cria um arquivo nome.bib, onde ficará uma lista de referências que você vai usar.
+    \item Depois você coloca no fim do documento o código \verb+\bibliography{nome}+
+    \item Aí basta citar essas refecências com o comando \verb+\cite{livro1}+, onde \verb+livro1+ é um nome definido para cada item no arquivo .bib
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  O arquivo .bib é simplesmente uma lista de itens da forma
+  \begin{verbatim}
+@book{ alice,
+  title = {Alice No País Das Maravilhas},
+  author = {Carroll, L.},
+  isbn = {9780990339205},
+  lccn = {2014908130},
+  url = {books.google.com.br/books?id=DDjBoAEACAAJ},
+  year = {2014},
+  publisher = {Bilingualing LLC}
+}
+  \end{verbatim}
+  onde o primeiro nome é o que você vai usar para referenciar o livro, e onde cada tipo de arquivo (book, article, etc.) tem opções diferentes para serem preenchidas.
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{itemize}
+    \item Uma tabela com todos os tipos de arquivo, e com todas as opções que cada tipo requer, pode se encontrada em \url{https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management\#BibTeX}
+    \item Geralmente as páginas de artigos científicos e de livros (como Google Books) já vem com um código de BibTeX pronto. (Vamos ver um exemplo na internet!)
+    \item O seu editor de \LaTeX\ deve estar habilitado para rodar o BibTeX junto do \LaTeX\ (a maioria dos editores, eg. Texmaker, TexnicCenter, faz isso por padrão)
+    \item Antes de colocar o \verb+\bibliography+, você pode colocar o comando \verb+\bibliographystyle{}+, com as entradas da tabela a seguir.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{table}[h]
+    \small
+    \begin{tabular}{|l|l|l|l|}
+      \hline
+      \textbf{Entrada} & \textbf{Formato de Nome} & \textbf{Referência} & \textbf{Ordem}\\
+      \hline
+      plain & Homer Simpson & Número & autor\\
+      \hline
+      unsrt & Homer Simpson & Número & referência\\
+      \hline
+      abbrv & H. Simpson & Número & autor\\
+      \hline
+      alpha & Homer Simpson & Sim95 & autor\\
+      \hline
+      abstract & Homer Simpson & Simpson-1995a & \\
+      \hline
+      acm & Simpson, H. & Número & \\
+      \hline
+      authordate1 & Simson, Homer & Simpson, 1995 & \\
+      \hline
+      apa & Simpson, H. (1995) & Simpson1995 & \\
+      \hline
+      named & Homer Simpson & Simpson 1995 & \\
+      \hline
+    \end{tabular}
+  \end{table}
+  (Tabela obtida de \url{https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management\#BibTeX})
 \end{frame}
 
 \begin{frame}[fragile]{Footnotes}
@@ -50,11 +111,11 @@
 \begin{frame}[fragile]{Links}
   \section{Links}
   Para adicionar links (clicáveis!) no seu documento, basta adicionar o pacote \verb+hyperref+.\\
-  
+
   A fim de introduzir no texto um endereço de internet que possua um link, usa-se o comando \verb+\url{http://pagina.web}+\\
   \medskip
-  \textbf{Ex.:} 
-  \begin{verbatim}  
+  \textbf{Ex.:}
+  \begin{verbatim}
   Na página \url{https://ctan.org/pkg/hyperref}
   podes encontrar a documentação do pacote
   hyperref.
@@ -66,8 +127,8 @@
   \medskip
   \textbf{Ex.:}
   \begin{verbatim}
-  \href{https://ctan.org/pkg/hyperref}{Clique aqui} 
-  para acessar a documentação do pacote 
+  \href{https://ctan.org/pkg/hyperref}{Clique aqui}
+  para acessar a documentação do pacote
   hyperref.
   \end{verbatim}
   Outro efeito interessante do pacote \verb+hyperref+ é que referências cruzadas, itens do sumário e notas de rodapé passam a possuir links clicáveis no pdf produzido.
@@ -79,41 +140,41 @@
   \medskip
   O exemplo mais comum são teoremas numerados, mas a situação é a mesma com definições, lemas, corolários etc... (veja ex2.pdf).\\
   \medskip
-  Isto é feito com o comando \verb+\newtheorem{nome_do_ambiente}{Texto}+, do pacote \verb+amsthm+. 
+  Isto é feito com o comando \verb+\newtheorem{nome_do_ambiente}{Texto}+, do pacote \verb+amsthm+.
 \end{frame}
 
 \begin{frame}[fragile]
   Note que o comando \verb+\newtheorem+ cria novos ambientes. Assim, se quisermos criar um ambiente \textit{teorema}, introduzimos no preâmbulo do documento o comando
 
-  \begin{verbatim} 
+  \begin{verbatim}
 \newtheorem{teorema}{Teorema }
   \end{verbatim}
   Sempre que quisermos criar um teorema no texto, invocamos este ambiente com a sintaxe usual
-   
-  \begin{verbatim} 
+
+  \begin{verbatim}
 \begin{teorema} BlaBlaBla \end{teorema}
   \end{verbatim}
-  e a saída aparecerá como 
-  
-  \bigskip  
+  e a saída aparecerá como
+
+  \bigskip
   \textbf{Teorema 2} BlaBlaBla.
 
 \end{frame}
 
 \begin{frame}[fragile]
   Há também um ambiente para adicionar demonstrações à teoremas, o ambiente \textit{proof}, usado como
-  
+
   \verb+\begin{proof} Prova a cargo do leitor \end{proof}+
-  
+
   \bigskip
-  
+
   \textbf{Dica: } Por padrão a numeração de ambientes tipo teorema é independente de seção, capítulo etc. Se quiser numerar teoremas no estilo (número do teorema).(número da seção) basta adicionar a opção \verb+section+ ao comando \verb+\newtheorem+
 
-  \begin{verbatim} 
-\newtheorem{teorema}{Teorema }[section] 
+  \begin{verbatim}
+\newtheorem{teorema}{Teorema }[section]
   \end{verbatim}
-  
-  Divirta-se com o exemplo ex2.tex!
+
+  Divirta-se com o exemplo ex3.tex!
 
 \end{frame}
 

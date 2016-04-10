@@ -1,48 +1,21 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[brazilian]{babel}
-\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{hyperref}
 
-\newtheorem{teorema}{Teorema }
-\newtheorem{definicao}{Definição }
-
-\title{Alguns teoremas e definições}
-\author{Emmy Nöether}
+\title{Exemplo de Referências Bibliográficas}
+\author{}
 \date{}
 
 \begin{document}
 
-\maketitle
+  \maketitle
 
-\begin{definicao} Dada uma variedade $M$, denominada variedade configuracional, e uma função $L: TM \rightarrow \mathbb{R}$, denominada lagrangiana, o par $(M, L)$ é dito sistema lagrangiano.
-\end{definicao}
+  Vamos fazer algumas referências bibliográgicas! Primeiramente, o livro \cite{macwilliams} é uma excelente fonte para se aprender sobre a Teoria de Códigos Corretores de erros.
 
-\begin{definicao} Dado um sistema lagrangiano $(M, L)$, uma curva suave $\gamma: [a, b] \rightarrow M$ é dita movimento físico se $\dot{\gamma}$ é extremo do funcional de ação $S$ associado a $L$, dado por
+  Além disso, vamos agora citar um arquivo que discute a relação entre matrizes de Cartan e a equivalência de Morita para blocos de grupos simétricos\cite{cartan_mat}.
 
-\[ S[\dot{\gamma}] = \int_a^b L(\dot{\gamma}(t))dt \]
-\end{definicao}
-
-\begin{teorema} Seja $\gamma: [a, b] \rightarrow M$ movimento físico do sistema lagrangiano $(M, L)$ e ${q^i \dot{q}^i}$ sistema de coordenadas local de $TM$ num aberto $\pi^{-1}(U)$, com $U$ vizinhança de $\gamma(t') \in M$. Então, para todo t tal que $\gamma(t) \in U$, valem as equações de Euler-Lagrange
-
-\[ \frac{d}{dt} \frac{\partial L}{\partial \dot{q}^i}(\dot{\gamma}(t)) = \frac{\partial L}{\partial q^i}(\dot{\gamma}(t)) \]
-
-\end{teorema}
-
-\begin{definicao} Dado um sistema lagrangiano $(M, L)$ uma família de difeomorfismos $\phi: (-\epsilon, \epsilon)\times M\rightarrow M$ suave é dita simetria contínua de $(M, L)$ se preserva $L$, isto é, se, sendo $\phi_s: M \rightarrow M$ definido por $\phi_s(p) = \phi(s, p)$, $\phi_s$ preservar $L$ para todo $s \in (-\epsilon, \epsilon)$.
-\end{definicao}
-
-Toda simetria contínua $\phi$ de um sistema define um campo vetorial $W: M \rightarrow TM$ que leva $q \mapsto \frac{\partial \phi}{\partial s}(0, p)$. O campo $W(p)$ nada mais é do que o vetor tangente em $p$ à curva gerada pela ação de $\phi$ sobre $p$, isto é, se $\psi_p : (-\epsilon, \epsilon) \rightarrow M$ é curva que leva $s \mapsto \phi(s, p)$, $W(p) = \psi_p'(0)$.  Temos então o
-
-\begin{teorema}[Nöether] Se o sistema $(M, L)$ admite uma simetria contínua $\phi:(-\epsilon, \epsilon) \times M \rightarrow M$ e $\gamma: J \subset \mathbb{R} \rightarrow M$ é movimento físico então a função $I: J \rightarrow \mathbb{R}$ dada por
-
-\begin{equation} 
-I(t) = \lim_{h \to 0} \frac{L(\dot{\gamma}(t) + hW_\gamma(t)) - L(\dot{\gamma}(t))}{h} 
-\end{equation}
-
-\noindent é constante, onde $W_\gamma$ denota a restrição do campo $W$ à curva $\gamma$ (i.e., $W_{\gamma}(t) = W \circ \gamma(t)$). $I$ é denominada carga conservada associada à simetria $\phi$.
-
-\end{teorema}
-
-\begin{proof} A demonstração é apenas uma aplicação simples da regra da cadeia, e a deixamos a cargo do leitor. \end{proof}
+  \bibliographystyle{unsrt}
+  \bibliography{bibliografia}
 
 \end{document}
